@@ -23,8 +23,6 @@ function LoginFormPage() {
     );
   };
 
-  console.log("asdaf");
-
   return (
     <form onSubmit={handleSubmit}>
       <ul>
