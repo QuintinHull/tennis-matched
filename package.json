@@ -12,7 +12,6 @@
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "npm start --prefix backend"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/QuintinHull/react-app.git"
