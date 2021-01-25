@@ -1,4 +1,9 @@
-ul {
+.nav_container {
+  width: 100%;
+}
+
+.nav_items {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
