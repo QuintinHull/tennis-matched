@@ -1,3 +1,56 @@
-label {
-  color: rgb(110, 15, 110);
+.signup {
+  height: 500px;
+  display: flex;
+}
+
+.signup__container {
+  width: 300px;
+  background-color: rgb(241, 241, 241);
+  border: 3px solid rgb(148, 148, 148);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 5px 5px 3px 1px rgba(15, 73, 15, 0.637);
+}
+
+.signup__form {
+  margin: auto;
+}
+
+.signup__form h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  color: rgb(87, 87, 87);
+}
+
+.signup__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.signup__row label {
+  margin-left: 10px;
+  letter-spacing: 1px;
+  color: rgb(70, 70, 70);
+}
+
+.signup__row input {
+  flex: 1;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.signup__row button {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border-color: rgb(70, 70, 70);
+  background-color: rgba(250, 250, 167, 0.726);
+  margin: auto;
+  font-family: "Raleway", sans-serif;
+  color: rgb(87, 87, 87);
 }
