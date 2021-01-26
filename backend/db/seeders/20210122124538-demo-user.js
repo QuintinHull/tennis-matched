@@ -9,17 +9,52 @@ module.exports = {
       [
         {
           email: "demo@user.io",
-          username: "Demo-lition",
+          username: "Demo-User",
           hashedPassword: bcrypt.hashSync("password"),
         },
         {
           email: faker.internet.email(),
-          username: "ReggieSmoove",
+          username: "IceBorg11",
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
         {
           email: faker.internet.email(),
-          username: "EnriqueShockwave",
+          username: "Djoker17",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "KingOfClay20",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "PrinceOfClay1",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "FrauleinForehand22",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "FedEx20",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "PistolPete14",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "QueenV7",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          username: "ReRe23",
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
       ],
@@ -33,7 +68,7 @@ module.exports = {
       "Users",
       {
         username: {
-          [Op.in]: ["Demo-lition", "ReggieSmoove", "EnriqueShockwave"],
+          [Op.in]: ["Demo-lition", "IceBorg", "KingOfClay"],
         },
       },
       {}
