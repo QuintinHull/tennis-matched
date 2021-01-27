@@ -11,3 +11,5 @@ router.get(
     return res.json(groups);
   })
 );
+
+module.exports = router;

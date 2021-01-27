@@ -41,6 +41,4 @@ router.post(
   })
 );
 
-// MyMXrXvx-htgaqdHLlNbWTKHtCCdTOQ2v-BQ
-
 module.exports = router;
