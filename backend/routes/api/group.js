@@ -12,4 +12,12 @@ router.get(
   })
 );
 
+router.post(
+  "/",
+  asyncHandler(async function (req, res) {
+    const newGroup = await Group.create(req.body);
+    return newGroup;
+  })
+);
+
 module.exports = router;

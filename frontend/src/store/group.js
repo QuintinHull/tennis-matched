@@ -1,8 +1,8 @@
 import { fetch } from "./csrf";
 
 const LOAD = "group/LOAD";
+const ADD_ONE = "group/ADD_GROUP";
 
-// const ADD_ONE = "group/ADD_GROUP";
 // const EDIT_ONE = "group/EDIT_GROUP";
 // const REMOVE_ONE = "group/REMOVE_GROUP";
 
@@ -11,10 +11,10 @@ const load = (groups) => ({
   groups,
 });
 
-// const addOneGroup = (newGroup) => ({
-//   type: ADD_ONE,
-//   newGroup,
-// });
+const addOneGroup = (newGroup) => ({
+  type: ADD_ONE,
+  newGroup,
+});
 
 // const editOneGroup = (updatedGroup) => ({
 //   type: EDIT_ONE,
@@ -27,11 +27,24 @@ const load = (groups) => ({
 // });
 
 export const getGroups = () => async (dispatch) => {
-  const response = await fetch(``);
+  const response = await fetch(`/api/groups`);
 
   if (response.ok) {
-    const groups = await response.json();
+    const groups = await response.data;
     dispatch(load(groups));
+  }
+};
+
+export const createGroup = (payload) => async (dispatch) => {
+  const response = await fetch(`/api/groups`, {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+    const newGroup = await response.data;
+    dispatch(addOneGroup(newGroup));
+    return newGroup;
   }
 };
 
@@ -41,19 +54,6 @@ export const getGroups = () => async (dispatch) => {
 //   if (response.ok) {
 //     const group = await response.json();
 //     dispatch(load(group));
-//   }
-// };
-
-// export const createGroup = (payload) => async (dispatch) => {
-//   const response = await fetch(``, {
-//     method: "post",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(payload),
-//   });
-//   if (response.ok) {
-//     const newGroup = await response.json();
-//     dispatch(addOneGroup(newGroup));
-//     return newGroup;
 //   }
 // };
 
@@ -79,14 +79,7 @@ export const getGroups = () => async (dispatch) => {
 //   }
 // };
 
-const initialState = {
-  1: {
-    id: 1,
-    name: "Full Metal Racquets",
-  },
-};
-
-const groupReducer = (state = initialState, action) => {
+const groupReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD:
       const newState = { ...state };
