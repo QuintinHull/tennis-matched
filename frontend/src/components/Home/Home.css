@@ -1,12 +1,38 @@
-.groups_container {
+.groups_title {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 500px;
+  height: 50px;
+  margin-bottom: 0%;
+  margin-top: 5px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
 }
+
+.groups_container {
+  width: 500px;
+}
+
+.groups_container h1 {
+  font-size: 30px;
+}
+
 .group_container {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  margin-top: 5px;
 }
 .group_container__name {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  letter-spacing: 5px;
 }
 .group_container__location_creator {
   display: flex;
   justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
 }

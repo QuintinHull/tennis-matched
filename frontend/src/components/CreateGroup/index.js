@@ -50,15 +50,15 @@ const CreateGroupForm = () => {
   // ];
 
   return (
-    <section className="group_form">
-      <h1>Create Group</h1>
-      <div groupForm__container>
+    <div className="group_form">
+      <div className="group_form__container">
         <form onSubmit={handleSubmit}>
+          <h1>Create Group</h1>
           <div className="group_form__row">
             <label>Group Name:</label>
             <input
               type="text"
-              placeholder="TheBig12"
+              placeholder="Enter a group name"
               required
               value={name}
               onChange={(event) => setName(event.target.value)}
@@ -77,25 +77,24 @@ const CreateGroupForm = () => {
             </select>
           </div>
           <div className="group_form__row">
-            <label>Group Description:</label>
             <textarea
-              placeholder="Leave a brief desciption of your group here!"
+              placeholder="Leave a brief group desciption here"
               maxLength="300"
               type="text"
               rows="5"
-              cols="35"
+              cols="50"
               required
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             ></textarea>
           </div>
-          <div className="group_form__row">
-            <button type="submit">Create Group</button>
+          <div className="group_form__buttons">
             <button type="button">Cancel</button>
+            <button type="submit">Create Group</button>
           </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 };
 

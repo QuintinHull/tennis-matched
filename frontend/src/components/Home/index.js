@@ -28,12 +28,12 @@ function Home() {
 
   return (
     <div>
-      <h1>Home Component</h1>
+      <CreateGroupForm />
       {/* {groupsTest.map((group) => {
         return <p>{group.name}</p>;
       })} */}
+      <h1 className="groups_title">Groups</h1>
       <div className="groups_container">
-        <h2>Groups</h2>
         {groups.map((group) => {
           return (
             <div className="group_container">
@@ -50,7 +50,6 @@ function Home() {
           );
         })}
       </div>
-      <CreateGroupForm />
     </div>
   );
 }
