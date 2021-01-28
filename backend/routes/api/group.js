@@ -1,13 +1,13 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-const { Group } = require("../../db/models");
+const { Group, User, Location } = require("../../db/models");
 
 const router = express.Router();
 
 router.get(
   "/",
   asyncHandler(async function (req, res) {
-    const groups = await Group.findAll();
+    const groups = await Group.findAll({ include: [Location, User] });
     return res.json(groups);
   })
 );

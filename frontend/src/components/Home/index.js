@@ -32,10 +32,24 @@ function Home() {
       {/* {groupsTest.map((group) => {
         return <p>{group.name}</p>;
       })} */}
-      <h2>Groups</h2>
-      {groups.map((group) => {
-        return <p key={group.name}>{group.name}</p>;
-      })}
+      <div className="groups_container">
+        <h2>Groups</h2>
+        {groups.map((group) => {
+          return (
+            <div className="group_container">
+              <div className="group_container__name">
+                <h2 key={group.name}>{group.name}</h2>
+              </div>
+              <div className="group_container__location_creator">
+                <h3>{group.User.username}</h3>
+                <h3>
+                  {group.Location.city}, {group.Location.state}
+                </h3>
+              </div>
+            </div>
+          );
+        })}
+      </div>
       <CreateGroupForm />
     </div>
   );

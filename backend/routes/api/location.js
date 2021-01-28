@@ -7,7 +7,11 @@ const router = express.Router();
 router.get(
   "/",
   asyncHandler(async function (req, res) {
-    const locations = await Location.findAll();
+    const locations = await Location.findAll({
+      order: [["city", "ASC"]],
+    });
+    // console.log(locations);
+    // grabs cities from A to Z
     return res.json(locations);
   })
 );

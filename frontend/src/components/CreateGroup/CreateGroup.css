@@ -1,0 +1,17 @@
+.group_form {
+  width: 50%;
+}
+
+.group_form__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.group_form__row {
+}
+
+.group_form__row input {
+}
+
+.group_form__row select {
+}

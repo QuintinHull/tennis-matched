@@ -3,6 +3,8 @@ import { createGroup } from "../../store/group";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocations } from "../../store/location";
 
+import "./CreateGroup.css";
+
 const CreateGroupForm = () => {
   const dispatch = useDispatch();
 
@@ -10,11 +12,13 @@ const CreateGroupForm = () => {
   const locations = useSelector((state) => {
     return Object.values(state.location);
   });
-
+  //locations isn't returning from A to Z
+  // console.log("------", locations);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState(locations[0]);
-
+  // cant set default value. Post works but I get an error, hard code id of 0 works without error
+  // locations[0] works but if location isnt selected you get error
   useEffect(() => {
     dispatch(getLocations());
   }, [dispatch]);
@@ -27,8 +31,7 @@ const CreateGroupForm = () => {
       creatorId: sessionUser.id,
       locationId: location,
     };
-    let createdGroup = await dispatch(createGroup(newGroup));
-    console.log(createdGroup);
+    await dispatch(createGroup(newGroup));
   };
 
   // const locations = [
@@ -47,42 +50,51 @@ const CreateGroupForm = () => {
   // ];
 
   return (
-    <section>
-      <h1>Form Component</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Group Name:</label>
-        <input
-          type="text"
-          placeholder="TheBig12"
-          required
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <label>Group Description:</label>
-        <textarea
-          maxLength="300"
-          type="text"
-          rows="5"
-          cols="35"
-          required
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-        ></textarea>
-        <label>Location:</label>
-        <select
-          value={location}
-          onChange={(event) => setLocation(event.target.value)}
-        >
-          {locations.length &&
-            locations.map((location) => (
-              <option key={location.id} value={location.id}>
-                {location.city}, {location.state}
-              </option>
-            ))}
-        </select>
-        <button type="submit">Create Group</button>
-        <button type="button">Cancel</button>
-      </form>
+    <section className="group_form">
+      <h1>Create Group</h1>
+      <div groupForm__container>
+        <form onSubmit={handleSubmit}>
+          <div className="group_form__row">
+            <label>Group Name:</label>
+            <input
+              type="text"
+              placeholder="TheBig12"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+            <label>Location:</label>
+            <select
+              value={location}
+              onChange={(event) => setLocation(event.target.value)}
+            >
+              {locations.length &&
+                locations.map((location) => (
+                  <option key={location.id} value={location.id}>
+                    {location.city}, {location.state}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className="group_form__row">
+            <label>Group Description:</label>
+            <textarea
+              placeholder="Leave a brief desciption of your group here!"
+              maxLength="300"
+              type="text"
+              rows="5"
+              cols="35"
+              required
+              value={description}
+              onChange={(event) => setDescription(event.target.value)}
+            ></textarea>
+          </div>
+          <div className="group_form__row">
+            <button type="submit">Create Group</button>
+            <button type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 };
