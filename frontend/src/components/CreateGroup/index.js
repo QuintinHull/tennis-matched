@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createGroup } from "../../store/group";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocations } from "../../store/location";
+import { useHistory } from "react-router-dom";
 
 import "./CreateGroup.css";
 
@@ -12,13 +13,12 @@ const CreateGroupForm = () => {
   const locations = useSelector((state) => {
     return Object.values(state.location);
   });
-  //locations isn't returning from A to Z
-  // console.log("------", locations);
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [location, setLocation] = useState(locations[0]);
-  // cant set default value. Post works but I get an error, hard code id of 0 works without error
-  // locations[0] works but if location isnt selected you get error
+  const [location, setLocation] = useState(1);
+  const history = useHistory();
+
   useEffect(() => {
     dispatch(getLocations());
   }, [dispatch]);
@@ -31,7 +31,10 @@ const CreateGroupForm = () => {
       creatorId: sessionUser.id,
       locationId: location,
     };
-    await dispatch(createGroup(newGroup));
+    let createdGroup = await dispatch(createGroup(newGroup));
+    if (createdGroup) {
+      history.push(`/group/${createdGroup.newGroup.id}`);
+    }
   };
 
   // const locations = [
@@ -65,6 +68,7 @@ const CreateGroupForm = () => {
             />
             <label>Location:</label>
             <select
+              required
               value={location}
               onChange={(event) => setLocation(event.target.value)}
             >

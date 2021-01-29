@@ -15,8 +15,15 @@ router.get(
 router.post(
   "/",
   asyncHandler(async function (req, res) {
-    const newGroup = await Group.create(req.body);
-    return newGroup;
+    // console.log("--------->", req.body);
+    const { name, description, creatorId, locationId } = req.body;
+    const newGroup = await Group.create({
+      name,
+      description,
+      creatorId,
+      locationId,
+    });
+    res.json({ newGroup });
   })
 );
 

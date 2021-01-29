@@ -8,13 +8,13 @@
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  border-radius: 2%;
+  border-radius: 3px;
 }
 
 .group_form__container h1 {
   display: flex;
   justify-content: center;
-  border-radius: 2%;
+  border-radius: 3px;
 }
 
 .group_form__row {
@@ -28,9 +28,24 @@
   margin-right: 5px;
 }
 
+.group_form__row input {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+}
+
+.group_form__row select {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+}
+
 .group_form__row textarea {
   display: flex;
   justify-content: center;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+  border: none;
 }
 
 .group_form__buttons {
@@ -41,5 +56,8 @@
 }
 
 .group_form__buttons button {
-  background-color: #fe9920;
+  background-color: #feac48;
+  border-radius: 3px;
+  border: none;
+  margin-right: 10px;
 }
