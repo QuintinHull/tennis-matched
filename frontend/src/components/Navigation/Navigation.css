@@ -1,7 +1,5 @@
 .nav_container {
   width: 100%;
-  position: absolute;
-  top: 0;
   height: 40px;
   border-top: 3px solid black;
   border-bottom: 3px solid black;

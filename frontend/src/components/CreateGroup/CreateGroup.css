@@ -1,12 +1,3 @@
-.groups_container {
-  height: 700px;
-  overflow-y: auto;
-}
-
-.group_container {
-  border-radius: 2%;
-}
-
 .group_form {
   width: 500px;
 }
@@ -50,5 +41,5 @@
 }
 
 .group_form__buttons button {
-  background-color: #839376;
+  background-color: #fe9920;
 }

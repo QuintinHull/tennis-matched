@@ -12,6 +12,8 @@
 
 .groups_container {
   width: 500px;
+  height: 700px;
+  overflow-y: auto;
 }
 
 .groups_container h1 {
@@ -23,6 +25,7 @@
   flex-direction: column;
   background-color: white;
   margin-top: 5px;
+  border-radius: 3px;
 }
 .group_container__name {
   display: flex;
