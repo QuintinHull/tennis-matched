@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { createGroup } from "../../store/group";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocations } from "../../store/location";
-
 import "./CreateGroup.css";
 
 const CreateGroupForm = () => {
@@ -12,13 +11,11 @@ const CreateGroupForm = () => {
   const locations = useSelector((state) => {
     return Object.values(state.location);
   });
-  //locations isn't returning from A to Z
-  // console.log("------", locations);
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState(locations[0]);
-  // cant set default value. Post works but I get an error, hard code id of 0 works without error
-  // locations[0] works but if location isnt selected you get error
+
   useEffect(() => {
     dispatch(getLocations());
   }, [dispatch]);
@@ -33,21 +30,6 @@ const CreateGroupForm = () => {
     };
     await dispatch(createGroup(newGroup));
   };
-
-  // const locations = [
-  //   {
-  //     city: "New York City",
-  //     state: "NY",
-  //   },
-  //   {
-  //     city: "Los Angeles",
-  //     state: "CA",
-  //   },
-  //   {
-  //     city: "Honolulu",
-  //     state: "HI",
-  //   },
-  // ];
 
   return (
     <div className="group_form">
@@ -78,11 +60,11 @@ const CreateGroupForm = () => {
           </div>
           <div className="group_form__row">
             <textarea
-              placeholder="Leave a brief group desciption here"
+              placeholder="Leave a brief desciption of your group here"
               maxLength="300"
               type="text"
               rows="5"
-              cols="50"
+              cols="60"
               required
               value={description}
               onChange={(event) => setDescription(event.target.value)}
