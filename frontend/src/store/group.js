@@ -80,15 +80,16 @@ export const createGroup = (payload) => async (dispatch) => {
 // };
 
 const groupReducer = (state = {}, action) => {
+  let newState = { ...state };
   switch (action.type) {
     case LOAD:
-      const newState = { ...state };
       action.groups.forEach((group) => {
         newState[group.id] = group;
       });
       return newState;
-    // case ADD_ONE:
-
+    case ADD_ONE:
+      newState[action.newGroup.id] = action.newGroup;
+      return newState;
     // case EDIT_ONE:
     //
     // case REMOVE_ONE:
