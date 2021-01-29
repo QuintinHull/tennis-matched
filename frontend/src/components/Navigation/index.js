@@ -22,14 +22,16 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="nav_container">
-      <div className="nav_items">
-        <div className="nav_left">
-          <NavLink exact to="/">
-            <i className="fas fa-home" />
-          </NavLink>
-        </div>
-        <div className="nav_right">{isLoaded && sessionLinks}</div>
+      <div className="nav_left">
+        <NavLink exact to="/">
+          <i className="fas fa-home" />
+          <input type="text" placeholder="    search groups.."></input>
+        </NavLink>
       </div>
+      <div className="nav_center">
+        <h1>TennisMatched</h1>
+      </div>
+      <div className="nav_right">{isLoaded && sessionLinks}</div>
     </div>
   );
 }
