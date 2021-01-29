@@ -28,9 +28,6 @@ function Navigation({ isLoaded }) {
             <i className="fas fa-home" />
           </NavLink>
         </div>
-        <div className="nav_center">
-          <h1>GotNext</h1>
-        </div>
         <div className="nav_right">{isLoaded && sessionLinks}</div>
       </div>
     </div>

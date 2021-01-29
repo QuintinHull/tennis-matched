@@ -3,40 +3,27 @@
   position: absolute;
   top: 0;
   height: 40px;
-  border-top: 3px solid #8f8f8f;
-  border-bottom: 3px solid #8f8f8f;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
   background-color: white;
-  /* position: fixed; */
 }
 
 .nav_items {
-  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .nav_left {
-  width: 20%;
+  width: 30%;
   display: flex;
   justify-content: flex-start;
 }
 
 .nav_right {
-  width: 20%;
+  width: 30%;
   display: flex;
   justify-content: flex-end;
-}
-
-.nav_center {
-  display: flex;
-  margin: auto;
-}
-
-.nav_center h1 {
-  width: 40%;
-  font-family: "Expletus Sans", cursive;
-  color: #312d20;
 }
 
 i {

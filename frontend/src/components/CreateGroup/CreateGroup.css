@@ -1,3 +1,12 @@
+.groups_container {
+  height: 700px;
+  overflow-y: auto;
+}
+
+.group_container {
+  border-radius: 2%;
+}
+
 .group_form {
   width: 500px;
 }
@@ -8,51 +17,29 @@
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  border-radius: 3px;
-  border: 3px solid #8f8f8f;
+  border-radius: 2%;
 }
 
 .group_form__container h1 {
   display: flex;
   justify-content: center;
   border-radius: 2%;
-  font-family: "Expletus Sans", cursive;
-  color: #312d20;
 }
 
 .group_form__row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 5px;
 }
 
 .group_form__row label {
   margin-left: 5px;
   margin-right: 5px;
-  color: #312d20;
-  font-family: "Expletus Sans", cursive;
 }
 
 .group_form__row textarea {
-  background-color: #f3f6f4;
-  font-family: "Exo 2", sans-serif;
-  resize: vertical;
-  border-radius: 5px;
-  border: none;
-}
-
-.group_form__row input {
-  background-color: #f3f6f4;
-  font-family: "Exo 2", sans-serif;
-  border-radius: 5px;
-  border: none;
-}
-
-.group_form__row select {
-  background-color: #f3f6f4;
-  font-family: "Exo 2", sans-serif;
-  border-radius: 5px;
-  border: none;
+  display: flex;
+  justify-content: center;
 }
 
 .group_form__buttons {
@@ -63,11 +50,5 @@
 }
 
 .group_form__buttons button {
-  background-color: #5c573e;
-  color: white;
-  margin: 2px;
-  font-family: "Expletus Sans", cursive;
-  font-weight: bold;
-  border: none;
-  border-radius: 2px;
+  background-color: #839376;
 }
