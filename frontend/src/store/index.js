@@ -3,8 +3,13 @@ import thunk from "redux-thunk";
 import session from "./session";
 
 import groupReducer from "./group";
+import locationReducer from "./location";
 
-const rootReducer = combineReducers({ session, group: groupReducer });
+const rootReducer = combineReducers({
+  session,
+  group: groupReducer,
+  location: locationReducer,
+});
 
 let enhancer;
 

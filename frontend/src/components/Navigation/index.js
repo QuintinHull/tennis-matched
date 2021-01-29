@@ -23,10 +23,15 @@ function Navigation({ isLoaded }) {
   return (
     <div className="nav_container">
       <div className="nav_items">
-        <NavLink exact to="/">
-          Home
-        </NavLink>
-        {isLoaded && sessionLinks}
+        <div className="nav_left">
+          <NavLink exact to="/">
+            <i className="fas fa-home" />
+          </NavLink>
+        </div>
+        <div className="nav_center">
+          <h1>GotNext</h1>
+        </div>
+        <div className="nav_right">{isLoaded && sessionLinks}</div>
       </div>
     </div>
   );

@@ -2,10 +2,49 @@
   width: 100%;
   position: absolute;
   top: 0;
+  height: 40px;
+  border-top: 3px solid #8f8f8f;
+  border-bottom: 3px solid #8f8f8f;
+  background-color: white;
+  /* position: fixed; */
 }
 
 .nav_items {
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav_left {
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav_right {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav_center {
+  display: flex;
+  margin: auto;
+}
+
+.nav_center h1 {
+  width: 40%;
+  font-family: "Expletus Sans", cursive;
+  color: #312d20;
+}
+
+i {
+  font-size: 23px;
+  color: #5c573e;
+}
+
+.profile_button {
+  background-color: transparent;
+  border: none;
 }
