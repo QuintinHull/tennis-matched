@@ -18,10 +18,20 @@ module.exports = {
       creatorId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "Users",
+          },
+        },
       },
       locationId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "Locations",
+          },
+        },
       },
       createdAt: {
         allowNull: false,

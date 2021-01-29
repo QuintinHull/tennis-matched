@@ -1,9 +1,35 @@
 .nav_container {
   width: 100%;
+  height: 40px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  background-color: white;
 }
 
 .nav_items {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav_left {
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav_right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+i {
+  font-size: 23px;
+  color: #5c573e;
+}
+
+.profile_button {
+  background-color: transparent;
+  border: none;
 }
