@@ -25,7 +25,7 @@ function App() {
           <Route path="/signup">
             <SignupFormPage key={2} />
           </Route>
-          <Route path="/group/:id">
+          <Route path="/groups/:id">
             <GroupView key={3} />
           </Route>
         </Switch>

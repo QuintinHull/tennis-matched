@@ -48,14 +48,14 @@ export const createGroup = (payload) => async (dispatch) => {
   }
 };
 
-// export const getOneGroup = () => async (dispatch) => {
-//   const response = await fetch(``);
+export const getOneGroup = (id) => async (dispatch) => {
+  const response = await fetch(`/api/groups/${id}`);
 
-//   if (response.ok) {
-//     const group = await response.json();
-//     dispatch(load(group));
-//   }
-// };
+  if (response.ok) {
+    const group = await response.data;
+    dispatch(load(group));
+  }
+};
 
 // export const editGroup = (payload) => async (dispatch) => {
 //   const response = await fetch(``, {

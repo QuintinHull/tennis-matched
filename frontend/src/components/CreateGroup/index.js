@@ -33,7 +33,7 @@ const CreateGroupForm = () => {
     };
     let createdGroup = await dispatch(createGroup(newGroup));
     if (createdGroup) {
-      history.push(`/group/${createdGroup.newGroup.id}`);
+      history.push(`/groups/${createdGroup.newGroup.id}`);
     }
   };
 
