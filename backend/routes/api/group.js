@@ -12,10 +12,20 @@ router.get(
   })
 );
 
+router.get(
+  "/:id",
+  asyncHandler(async function (req, res) {
+    const group = await Group.findByPk(req.params.id, {
+      include: [Location, User],
+    });
+    console.log("<--------------------->", group);
+    return res.json(group);
+  })
+);
+
 router.post(
   "/",
   asyncHandler(async function (req, res) {
-    // console.log("--------->", req.body);
     const { name, description, creatorId, locationId } = req.body;
     const newGroup = await Group.create({
       name,

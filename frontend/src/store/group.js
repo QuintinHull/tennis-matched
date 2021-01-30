@@ -2,7 +2,7 @@ import { fetch } from "./csrf";
 
 const LOAD = "group/LOAD";
 const ADD_ONE = "group/ADD_GROUP";
-
+const LOAD_ONE = "group/LOAD_ONE";
 // const EDIT_ONE = "group/EDIT_GROUP";
 // const REMOVE_ONE = "group/REMOVE_GROUP";
 
@@ -14,6 +14,11 @@ const load = (groups) => ({
 const addOneGroup = (newGroup) => ({
   type: ADD_ONE,
   newGroup,
+});
+
+const loadOne = (group) => ({
+  type: LOAD_ONE,
+  group,
 });
 
 // const editOneGroup = (updatedGroup) => ({
@@ -37,7 +42,7 @@ export const getGroups = () => async (dispatch) => {
 
 export const createGroup = (payload) => async (dispatch) => {
   const response = await fetch(`/api/groups`, {
-    method: "post",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
@@ -53,7 +58,7 @@ export const getOneGroup = (id) => async (dispatch) => {
 
   if (response.ok) {
     const group = await response.data;
-    dispatch(load(group));
+    dispatch(loadOne(group));
   }
 };
 
@@ -80,15 +85,21 @@ export const getOneGroup = (id) => async (dispatch) => {
 // };
 
 const groupReducer = (state = {}, action) => {
+  let newState = { ...state };
   switch (action.type) {
     case LOAD:
-      const newState = { ...state };
       action.groups.forEach((group) => {
         newState[group.id] = group;
       });
       return newState;
-    // case ADD_ONE:
-
+    case LOAD_ONE:
+      const group = action.group;
+      newState[group.id] = group;
+      return newState;
+    case ADD_ONE:
+      const addedGroup = action.newGroup;
+      newState[addedGroup.id] = addedGroup;
+      return newState;
     // case EDIT_ONE:
     //
     // case REMOVE_ONE:
