@@ -18,7 +18,6 @@ router.get(
     const group = await Group.findByPk(req.params.id, {
       include: [Location, User],
     });
-    console.log("<--------------------->", group);
     return res.json(group);
   })
 );
