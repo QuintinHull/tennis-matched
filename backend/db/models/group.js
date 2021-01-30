@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   Group.associate = function (models) {
     Group.belongsTo(models.Location, { foreignKey: "locationId" });
     Group.belongsTo(models.User, { foreignKey: "creatorId" });
+    Group.belongsToMany(models.User, {
+      through: "Group_User",
+      otherKey: "userId",
+      foreignKey: "groupId",
+    });
   };
   return Group;
 };

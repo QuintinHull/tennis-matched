@@ -51,6 +51,11 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     User.hasMany(models.Group, { foreignKey: "creatorId" });
+    User.belongsToMany(models.Group, {
+      through: "Group_User",
+      otherKey: "groupId",
+      foreignKey: "userId",
+    });
   };
 
   User.prototype.toSafeObject = function () {
