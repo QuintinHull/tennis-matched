@@ -3,7 +3,7 @@ import { fetch } from "./csrf";
 const LOAD = "group/LOAD";
 const ADD_ONE = "group/ADD_GROUP";
 const LOAD_ONE = "group/LOAD_ONE";
-// const EDIT_ONE = "group/EDIT_GROUP";
+const EDIT_ONE = "group/EDIT_GROUP";
 // const REMOVE_ONE = "group/REMOVE_GROUP";
 
 const load = (groups) => ({
@@ -21,10 +21,10 @@ const loadOne = (group) => ({
   group,
 });
 
-// const editOneGroup = (updatedGroup) => ({
-//   type: EDIT_ONE,
-//   updatedGroup,
-// });
+const editOneGroup = (updatedGroup) => ({
+  type: EDIT_ONE,
+  updatedGroup,
+});
 
 // const removeOneGroup = (groupId) => ({
 //   type: REMOVE_ONE,
@@ -62,18 +62,18 @@ export const getOneGroup = (id) => async (dispatch) => {
   }
 };
 
-// export const editGroup = (payload) => async (dispatch) => {
-//   const response = await fetch(``, {
-//     method: "put",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(payload),
-//   });
-//   if (response.ok) {
-//     const updatedGroup = await response.json();
-//     dispatch(editOneGroup(updatedGroup));
-//     return updatedGroup;
-//   }
-// };
+export const editGroup = (payload) => async (dispatch) => {
+  const response = await fetch(`/api/groups/${payload.id}`, {
+    method: "put",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+    const updatedGroup = await response.data;
+    dispatch(editOneGroup(updatedGroup));
+    return updatedGroup;
+  }
+};
 
 // export const removeGroup = (groupId) => async (dispatch) => {
 //   const response = await fetch(``, {

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { getGroups } from "../../store/group";
 import CreateGroupForm from "../CreateGroup";
 import "./Home.css";
@@ -21,18 +22,20 @@ function Home() {
       <div className="groups_container">
         {groups.map((group) => {
           return (
-            <div key={group.id} className="group_container">
-              <div className="group_container__name">
-                <h2>{group.name}</h2>
+            <NavLink key={group.id} to={`/groups/${group.id}`}>
+              <div key={group.id} className="group_container">
+                <div className="group_container__name">
+                  <h2>{group.name}</h2>
+                </div>
+                <div className="group_container__location_creator">
+                  <h3>{group.User && group.User.username}</h3>
+                  <h3>
+                    {group.Location && group.Location.city},{" "}
+                    {group.Location && group.Location.state}
+                  </h3>
+                </div>
               </div>
-              <div className="group_container__location_creator">
-                <h3>{group.User && group.User.username}</h3>
-                <h3>
-                  {group.Location && group.Location.city},{" "}
-                  {group.Location && group.Location.state}
-                </h3>
-              </div>
-            </div>
+            </NavLink>
           );
         })}
       </div>

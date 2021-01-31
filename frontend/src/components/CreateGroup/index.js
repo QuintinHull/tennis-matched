@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { createGroup } from "../../store/group";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocations } from "../../store/location";
+import { createGroup } from "../../store/group";
 import { useHistory } from "react-router-dom";
 
 import "./CreateGroup.css";

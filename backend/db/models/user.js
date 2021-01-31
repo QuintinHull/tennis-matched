@@ -56,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "groupId",
       foreignKey: "userId",
     });
+    User.hasMany(models.Group_User, { foreignKey: "userId" });
   };
 
   User.prototype.toSafeObject = function () {

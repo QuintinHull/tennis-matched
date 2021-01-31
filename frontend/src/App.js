@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import GroupView from "./components/GroupView";
+import EditGroup from "./components/EditGroup";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,13 +21,16 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <Home key={1} />
+            <Home />
           </Route>
           <Route path="/signup">
-            <SignupFormPage key={2} />
+            <SignupFormPage />
           </Route>
-          <Route path="/groups/:id">
-            <GroupView key={3} />
+          <Route exact path="/groups/:id">
+            <GroupView />
+          </Route>
+          <Route path="/groups/:id/edit">
+            <EditGroup />
           </Route>
         </Switch>
       )}

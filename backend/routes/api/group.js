@@ -36,4 +36,23 @@ router.post(
   })
 );
 
+router.put(
+  "/:id",
+  asyncHandler(async function (req, res) {
+    const { name, description, creatorId, locationId } = req.body;
+    const updatedGroup = await Group.update(
+      {
+        name,
+        description,
+        creatorId,
+        locationId,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    return res.json({ updatedGroup });
+  })
+);
+
 module.exports = router;
