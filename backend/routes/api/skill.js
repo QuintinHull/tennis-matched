@@ -8,7 +8,6 @@ router.get(
   "/",
   asyncHandler(async function (req, res) {
     const skills = await Skill.findAll();
-    console.log("---------->", skills);
     return res.json(skills);
   })
 );

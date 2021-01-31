@@ -2,17 +2,26 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getGroups } from "../../store/group";
+import { getEvents } from "../../store/event";
 import CreateGroupForm from "../CreateGroup";
 import "./Home.css";
 
 function Home() {
-  const dispatch = useDispatch();
   const groups = useSelector((state) => {
     return Object.values(state.group);
   });
+  const events = useSelector((state) => {
+    return Object.values(state.event);
+  });
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getGroups());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getEvents());
   }, [dispatch]);
 
   return (
@@ -36,6 +45,22 @@ function Home() {
                 </div>
               </div>
             </NavLink>
+          );
+        })}
+      </div>
+      <div>
+        <h1>Events</h1>
+        {events.map((event) => {
+          return (
+            <div key={event.id}>
+              <p>{event && event.description}</p>
+              <p>{event && event.date}</p>
+              <p>{event && event.time}</p>
+              <p>{event && event.place}</p>
+              <p>{event.User && event.User.username}</p>
+              <p>Group: {event.Group && event.Group.name}</p>
+              <p>Skill: {event.Skill && event.Skill.level}</p>
+            </div>
           );
         })}
       </div>

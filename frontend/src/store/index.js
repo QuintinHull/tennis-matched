@@ -6,6 +6,7 @@ import groupReducer from "./group";
 import locationReducer from "./location";
 import memberReducer from "./member";
 import skillReducer from "./skill";
+import eventReducer from "./event";
 
 const rootReducer = combineReducers({
   session,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   location: locationReducer,
   member: memberReducer,
   skill: skillReducer,
+  event: eventReducer,
 });
 
 let enhancer;

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getOneGroup } from "../../store/group";
+import { getGroupEvents } from "../../store/event";
 import { getMembers, addMember } from "../../store/member";
 
 const GroupView = () => {
@@ -11,6 +12,9 @@ const GroupView = () => {
   const members = useSelector((state) => {
     return Object.values(state.member);
   });
+  const events = useSelector((state) => {
+    return Object.values(state.event);
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,6 +23,10 @@ const GroupView = () => {
 
   useEffect(() => {
     dispatch(getMembers(id));
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    dispatch(getGroupEvents(id));
   }, [dispatch, id]);
 
   const handleNewMember = async (event) => {
@@ -58,6 +66,18 @@ const GroupView = () => {
       </div>
       <div>
         <h1>Group Events</h1>
+        {events.map((event) => {
+          return (
+            <div key={event.id}>
+              <p>{event && event.description}</p>
+              <p>{event && event.date}</p>
+              <p>{event && event.time}</p>
+              <p>{event && event.place}</p>
+              <p>{event.User && event.User.username}</p>
+              <p>Skill: {event.Skill && event.Skill.level}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
