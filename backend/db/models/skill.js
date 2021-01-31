@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Skill.associate = function (models) {
-    // associations can be defined here
+    Skill.hasMany(models.Event, { foreignKey: "skillId" });
   };
   return Skill;
 };

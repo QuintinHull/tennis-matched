@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import GroupView from "./components/GroupView";
 import EditGroup from "./components/EditGroup";
+import SkillGuide from "./components/SkillGuide";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/groups/:id/edit">
             <EditGroup />
+          </Route>
+          <Route path="/skill-guide">
+            <SkillGuide />
           </Route>
         </Switch>
       )}

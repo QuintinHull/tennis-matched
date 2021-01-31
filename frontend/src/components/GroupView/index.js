@@ -41,22 +41,24 @@ const GroupView = () => {
       <div>
         <h1>GroupView Component</h1>
         <p>name:{group && group.name}</p>
-        <button onClick={handleNewMember}>Join Group</button>
-        <button onClick={editGroup}>Edit Group</button>
-        <button>Remove Group</button>
+        <button onClick={handleNewMember}>Join</button>
+        <button onClick={editGroup}>Update</button>
+        <button>Remove</button>
         <p>description:{group && group.description}</p>
         <p>Creator:{group && group.User && group.User.username}</p>
         <p>Location:{group && group.Location && group.Location.city}</p>
         <h2>Members: </h2>
         {members.map((member) => {
           return (
-            <div key={member && member.id}>
-              <h3>{member.User && member.User.username}</h3>
-            </div>
+            <h3 key={member && member.id}>
+              {member.User && member.User.username}
+            </h3>
           );
         })}
       </div>
-      <div></div>
+      <div>
+        <h1>Group Events</h1>
+      </div>
     </div>
   );
 };

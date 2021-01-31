@@ -31,7 +31,12 @@ function Navigation({ isLoaded }) {
       <div className="nav_center">
         <h1>TennisMatched</h1>
       </div>
-      <div className="nav_right">{isLoaded && sessionLinks}</div>
+      <div className="nav_right">
+        <NavLink exact to="/skill-guide">
+          Skill Guide
+        </NavLink>
+        {isLoaded && sessionLinks}
+      </div>
     </div>
   );
 }

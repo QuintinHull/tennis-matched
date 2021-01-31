@@ -53,7 +53,7 @@ function EditGroup() {
                 type="text"
                 placeholder="Enter a group name"
                 required
-                value={name}
+                value={group && name}
                 onChange={(event) => setName(event.target.value)}
               />
               <label>Location:</label>
@@ -78,7 +78,7 @@ function EditGroup() {
                 rows="5"
                 cols="50"
                 required
-                value={description}
+                value={group && description}
                 onChange={(event) => setDescription(event.target.value)}
               ></textarea>
             </div>

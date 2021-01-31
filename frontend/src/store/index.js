@@ -5,12 +5,14 @@ import session from "./session";
 import groupReducer from "./group";
 import locationReducer from "./location";
 import memberReducer from "./member";
+import skillReducer from "./skill";
 
 const rootReducer = combineReducers({
   session,
   group: groupReducer,
   location: locationReducer,
   member: memberReducer,
+  skill: skillReducer,
 });
 
 let enhancer;
