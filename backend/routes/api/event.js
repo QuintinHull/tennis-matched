@@ -16,11 +16,32 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async function (req, res) {
-    const members = await Event.findAll({
+    const events = await Event.findAll({
       where: { groupId: req.params.id },
       include: [Skill, User, Group],
     });
-    return res.json(members);
+    return res.json(events);
+  })
+);
+
+router.get(
+  "/view/:id",
+  asyncHandler(async function (req, res) {
+    const event = await Event.findByPk(req.params.id, {
+      include: [Skill, User, Group],
+    });
+    return res.json(event);
+  })
+);
+
+router.get(
+  "/skill/:id",
+  asyncHandler(async function (req, res) {
+    const events = await Event.findAll({
+      where: { skillId: req.params.id },
+      include: [Skill, User, Group],
+    });
+    return res.json(events);
   })
 );
 
