@@ -1,15 +1,15 @@
 .login {
   height: 300px;
   display: flex;
-  background-color: rgba(202, 240, 202, 0.541);
-  border-color: black;
+  background-color: #aeb7a4;
+  border-radius: 3px;
 }
 
 .login__container {
   margin: auto;
   display: flex;
   flex-direction: row;
-  font-family: "Raleway", sans-serif;
+  font-family: "Expletus Sans", cursive;
   letter-spacing: 2px;
 }
 
@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   font-weight: 700;
+  color: rgb(51, 51, 51);
 }
 
 .login__row {
@@ -30,20 +31,27 @@
 .login__row label {
   margin-left: 10px;
   letter-spacing: 1px;
+  font-family: "Exo 2", sans-serif;
+  border: none;
+  color: rgb(51, 51, 51);
 }
 
 .login__row input {
   flex: 1;
   margin-right: 10px;
   margin-left: 5px;
+  font-family: "Exo 2", sans-serif;
+  border: none;
+  border-radius: 3px;
 }
 
 .login__row button {
-  height: 50px;
+  height: 35px;
   width: 50px;
-  border-radius: 50%;
-  border-color: rgb(107, 107, 107);
-  background-color: rgb(250, 250, 167);
+  border: none;
+  background-color: #feac48;
+  color: rgb(51, 51, 51);
+  border-radius: 3px;
   margin: auto;
-  font-family: "Raleway", sans-serif;
+  font-family: "Exo 2", sans-serif;
 }

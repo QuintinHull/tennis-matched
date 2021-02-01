@@ -1,0 +1,136 @@
+.event_page {
+  display: flex;
+  justify-content: center;
+}
+
+.event_view__container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 500px;
+  background-color: #aeb7a4;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgb(180, 180, 180);
+}
+
+.event_view__row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.event__user_skill {
+  margin-left: 10px;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
+}
+
+.event__date_time {
+  margin-right: 10px;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
+}
+
+.event_view__row2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.event_view__row2 h1 {
+  margin: auto;
+  font-size: 20px;
+  flex-wrap: wrap;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
+}
+
+.event_view__row3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.event_view__row3 form {
+  margin: auto;
+}
+
+.event_view__row3 button {
+  background-color: #feac48;
+  border-radius: 3px;
+  border: none;
+  margin-left: 4px;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+}
+
+.event_view__row3 input {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
+}
+
+.event_view__row3 h5 {
+  margin-left: 10px;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
+}
+
+.comments_title {
+  color: rgb(51, 51, 51);
+  background-color: white;
+  border-top: 3px solid rgb(51, 51, 51);
+  border-bottom: 3px solid rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
+}
+
+.comments_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments_container h1 {
+  width: 500px;
+  margin: auto;
+}
+
+.comment_body__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment_body {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgb(197, 197, 197);
+}
+
+.comment_body__message {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+}
+
+.comment_body__user {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+}
