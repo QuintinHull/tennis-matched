@@ -1,0 +1,36 @@
+.skill_events_container {
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
+}
+
+.skill_event_container {
+  width: 250px;
+  height: 220px;
+  background-color: white;
+  border-radius: 3px;
+  margin: 5px;
+  box-shadow: 1px 1px 1px rgb(197, 197, 197);
+}
+
+.skill_event_row_1 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+}
+
+.skill_event_row_2 {
+  margin-left: 5px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+  color: rgb(51, 51, 51);
+}
+.skill_event_row_3 {
+  margin: auto;
+}
