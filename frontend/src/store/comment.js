@@ -44,7 +44,6 @@ function commentReducer(state = initialState, action) {
       newState = Object.assign({}, state, action.comments);
       return newState;
     case ADD_ONE:
-      // console.log("in add tweets", action.payload);
       const comment = action.newComment;
       // const commentId = comment.id;
       newState = Object.assign({}, state, { commentId: comment });
