@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getLocations } from "../../store/location";
 import { editGroup, getOneGroup } from "../../store/group";
 import { useHistory, useParams } from "react-router-dom";
+import "./EditGroup.css";
 
 function EditGroup() {
   const dispatch = useDispatch();
@@ -47,12 +48,13 @@ function EditGroup() {
 
   return (
     <div>
-      <h2>Edit Group Component</h2>
-      <div className="group_form">
-        <div className="group_form__container">
+      <div className="edit_group_form">
+        <div className="edit_group_form__container">
           <form onSubmit={handleSubmit}>
-            <h1>{group && group.name}</h1>
-            <div className="group_form__row">
+            <div className="edit_group_form__row_one">
+              <h1>Edit: {group && group.name}</h1>
+            </div>
+            <div className="edit_group_form__row_two">
               <label>Group Name:</label>
               <input
                 type="text"
@@ -75,19 +77,19 @@ function EditGroup() {
                   ))}
               </select>
             </div>
-            <div className="group_form__row">
+            <div className="edit_group_form__row_three">
               <textarea
                 placeholder="Change your group desciption here"
                 maxLength="300"
                 type="text"
                 rows="5"
-                cols="50"
+                cols="53"
                 required
                 value={group && description}
                 onChange={(event) => setDescription(event.target.value)}
               ></textarea>
             </div>
-            <div className="group_form__buttons">
+            <div className="edit_group_form__buttons">
               <button type="button" onClick={handleCancelClick}>
                 Cancel
               </button>

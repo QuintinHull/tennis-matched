@@ -1,0 +1,54 @@
+.edit_group_form__container {
+  margin-top: 5px;
+}
+
+.edit_group_form__container form {
+  width: 500px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #aeb7a4;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgb(180, 180, 180);
+}
+
+.edit_group_form__row_one {
+  display: flex;
+  justify-content: center;
+  color: rgb(51, 51, 51);
+}
+
+.edit_group_form__row_two {
+  display: flex;
+  justify-content: center;
+  color: rgb(51, 51, 51);
+}
+
+.edit_group_form__row_two label {
+  margin-left: 5px;
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
+}
+
+.edit_group_form__row_two input {
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
+}
+
+.edit_group_form__row_three {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.edit_group_form__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+}
+
+.edit_group_form__buttons button {
+  margin-right: 10px;
+}

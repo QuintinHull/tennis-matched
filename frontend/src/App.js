@@ -36,17 +36,17 @@ function App() {
           <Route exact path="/groups/edit/:id">
             <EditGroup />
           </Route>
-          <Route path="/skill-guide">
+          <Route exact path={`groups/create/:id`}>
+            <CreateEvent />
+          </Route>
+          <Route exact path="/skill-guide">
             <SkillGuide />
           </Route>
           <Route exact path={`/events/:id`}>
             <EventView />
           </Route>
-          <Route path={`/events/skill/:id`}>
+          <Route exact path={`/events/skill/:id`}>
             <SkillEventView />
-          </Route>
-          <Route exact path={`groups/:id/create`}>
-            <CreateEvent />
           </Route>
         </Switch>
       )}
