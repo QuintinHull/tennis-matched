@@ -6,6 +6,7 @@ const locationsRouter = require("./location.js");
 const membersRouter = require("./member.js");
 const skillsRouter = require("./skill.js");
 const eventsRouter = require("./event.js");
+const commentsRouter = require("./comment.js");
 
 router.use("/session", sessionRouter);
 
@@ -20,5 +21,7 @@ router.use("/members", membersRouter);
 router.use("/skills", skillsRouter);
 
 router.use("/events", eventsRouter);
+
+router.use("/comments", commentsRouter);
 
 module.exports = router;

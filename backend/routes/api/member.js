@@ -10,6 +10,7 @@ router.get(
     const members = await Group_User.findAll({
       where: { groupId: req.params.id },
       include: [User],
+      order: [["createdAt", "DESC"]],
     });
     return res.json(members);
   })

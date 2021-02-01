@@ -1,8 +1,10 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { Group, User, Location } = require("../../db/models");
+const { requireAuth } = require("../../utils/auth");
 
 const router = express.Router();
+router.use(requireAuth);
 
 router.get(
   "/",

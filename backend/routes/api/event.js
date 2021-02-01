@@ -8,7 +8,6 @@ router.get(
   "/",
   asyncHandler(async function (req, res) {
     const events = await Event.findAll({ include: [Skill, User, Group] });
-    console.log("--------->", events);
     return res.json(events);
   })
 );
