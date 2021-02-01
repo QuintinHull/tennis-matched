@@ -40,6 +40,10 @@ const GroupView = () => {
     await dispatch(addMember(newMember));
   };
 
+  const handleNewEvent = async (event) => {
+    history.push(`/groups/${id}/create`);
+  };
+
   const editGroup = async (event) => {
     history.push(`/groups/edit/${id}`);
   };
@@ -69,6 +73,7 @@ const GroupView = () => {
             <h2>Admin: {group && group.User && group.User.username}</h2>
             <div className="group_form__buttons">
               <button onClick={handleNewMember}>Join</button>
+              <button onClick={handleNewEvent}>Create</button>
               {admin() && <button onClick={editGroup}>Update</button>}
             </div>
           </div>

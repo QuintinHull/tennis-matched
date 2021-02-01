@@ -66,3 +66,17 @@ i {
   border-radius: 3px;
   font-family: "Chivo", sans-serif;
 }
+
+.nav_link__signup {
+  width: 53px;
+  text-decoration: none;
+  background-color: #feac48;
+  border-radius: 3px;
+  border: none;
+  color: rgb(51, 51, 51);
+  font-family: "Exo 2", sans-serif;
+  font-size: 14px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 1px 1px 3px #ad7530;
+}

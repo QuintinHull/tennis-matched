@@ -33,7 +33,7 @@ function EventView() {
     setMessage("");
   };
 
-  if (!event || !event.User || !event.Group || !event.Skill) {
+  if (!event || !event.User || !event.Group || !event.Skill || !comments) {
     return null;
   }
 

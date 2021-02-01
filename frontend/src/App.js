@@ -10,6 +10,7 @@ import EditGroup from "./components/EditGroup";
 import SkillGuide from "./components/SkillGuide";
 import EventView from "./components/EventView";
 import SkillEventView from "./components/SkillEventView";
+import CreateEvent from "./components/CreateEvent";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route path={`/events/skill/:id`}>
             <SkillEventView />
+          </Route>
+          <Route exact path={`groups/:id/create`}>
+            <CreateEvent />
           </Route>
         </Switch>
       )}
