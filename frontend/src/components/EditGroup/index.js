@@ -13,9 +13,9 @@ function EditGroup() {
     return Object.values(state.location);
   });
 
-  const [name, setName] = useState();
-  const [description, setDescription] = useState();
-  const [location, setLocation] = useState();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState(1);
   const history = useHistory();
 
   useEffect(() => {
@@ -36,8 +36,13 @@ function EditGroup() {
     };
     let createdGroup = await dispatch(editGroup(updatedGroup));
     if (createdGroup) {
-      history.push(`/groups/${createdGroup.newGroup.id}`);
+      history.push(`/groups/${id}`);
     }
+  };
+
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    history.push(`/groups/${id}`);
   };
 
   return (
@@ -51,7 +56,7 @@ function EditGroup() {
               <label>Group Name:</label>
               <input
                 type="text"
-                placeholder="Enter a group name"
+                placeholder="Edit group name"
                 required
                 value={group && name}
                 onChange={(event) => setName(event.target.value)}
@@ -72,7 +77,7 @@ function EditGroup() {
             </div>
             <div className="group_form__row">
               <textarea
-                placeholder="Leave a brief group desciption here"
+                placeholder="Change your group desciption here"
                 maxLength="300"
                 type="text"
                 rows="5"
@@ -83,7 +88,9 @@ function EditGroup() {
               ></textarea>
             </div>
             <div className="group_form__buttons">
-              <button type="button">Cancel</button>
+              <button type="button" onClick={handleCancelClick}>
+                Cancel
+              </button>
               <button type="submit">Update</button>
             </div>
           </form>

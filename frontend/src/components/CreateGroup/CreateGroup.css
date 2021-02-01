@@ -3,54 +3,70 @@
 }
 
 .group_form__container {
-  margin-top: 5px;
+  height: 200px;
   background-color: #aeb7a4;
-  display: flex;
   flex: 1;
-  justify-content: flex-start;
   border-radius: 3px;
+  box-shadow: 1px 1px 1px rgb(180, 180, 180);
 }
 
-.group_form__container h1 {
+.form_title {
   display: flex;
   justify-content: center;
-  border-radius: 3px;
+  font-family: "Chivo", sans-serif;
+  font-weight: 500;
+  color: rgb(51, 51, 51);
+  height: 100%;
+  margin-top: 5px;
 }
 
-.group_form__row {
+.group_form__row_2 {
   display: flex;
   justify-content: center;
   margin-top: 5px;
 }
 
-.group_form__row label {
+.group_form__row_3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.group_form__row_2 label {
   margin-left: 5px;
   margin-right: 5px;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
 }
 
-.group_form__row input {
+.group_form__row_2 input {
   background-color: #f0f0f0;
   border: none;
   border-radius: 3px;
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
 }
 
-.group_form__row select {
+.group_form__row_2 select {
   background-color: #f0f0f0;
   border: none;
   border-radius: 3px;
+  color: rgb(51, 51, 51);
+  font-family: "Chivo", sans-serif;
+  font-size: 12px;
 }
 
-.group_form__row textarea {
-  display: flex;
-  justify-content: center;
+.group_form__row_3 textarea {
   border-radius: 3px;
   background-color: #f0f0f0;
   border: none;
+  font-family: "Chivo", sans-serif;
 }
 
 .group_form__buttons {
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
@@ -60,4 +76,5 @@
   border-radius: 3px;
   border: none;
   margin-right: 10px;
+  color: rgb(51, 51, 51);
 }

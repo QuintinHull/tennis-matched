@@ -33,32 +33,26 @@ const CreateGroupForm = () => {
     };
     let createdGroup = await dispatch(createGroup(newGroup));
     if (createdGroup) {
+      setName("");
+      setDescription("");
+      setLocation("");
       history.push(`/groups/${createdGroup.newGroup.id}`);
     }
   };
 
-  // const locations = [
-  //   {
-  //     city: "New York City",
-  //     state: "NY",
-  //   },
-  //   {
-  //     city: "Los Angeles",
-  //     state: "CA",
-  //   },
-  //   {
-  //     city: "Honolulu",
-  //     state: "HI",
-  //   },
-  // ];
+  const handleCancelSubmit = (e) => {
+    e.preventDefault();
+    setName("");
+    setDescription("");
+  };
 
   return (
     <div className="group_form">
       <div className="group_form__container">
-        <form onSubmit={handleSubmit}>
-          <h1>Create Group</h1>
-          <div className="group_form__row">
-            <label>Group Name:</label>
+        <form class="create_group_form" onSubmit={handleSubmit}>
+          <h1 className="form_title">Create Group</h1>
+          <div className="group_form__row_2">
+            <label>group name:</label>
             <input
               type="text"
               placeholder="Enter a group name"
@@ -66,7 +60,7 @@ const CreateGroupForm = () => {
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
-            <label>Location:</label>
+            <label>location:</label>
             <select
               required
               value={location}
@@ -80,20 +74,22 @@ const CreateGroupForm = () => {
                 ))}
             </select>
           </div>
-          <div className="group_form__row">
+          <div className="group_form__row_3">
             <textarea
               placeholder="Leave a brief group desciption here"
               maxLength="300"
               type="text"
               rows="5"
-              cols="50"
+              cols="60"
               required
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             ></textarea>
           </div>
           <div className="group_form__buttons">
-            <button type="button">Cancel</button>
+            <button type="button" onClick={handleCancelSubmit}>
+              Cancel
+            </button>
             <button type="submit">Create Group</button>
           </div>
         </form>

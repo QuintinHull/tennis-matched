@@ -33,7 +33,7 @@ function Navigation({ isLoaded }) {
       </div>
       <div className="nav_right">
         <NavLink exact to="/skill-guide">
-          Skill Guide
+          <button className="skill_button">skill guide</button>
         </NavLink>
         {isLoaded && sessionLinks}
       </div>

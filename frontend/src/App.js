@@ -8,6 +8,8 @@ import Home from "./components/Home";
 import GroupView from "./components/GroupView";
 import EditGroup from "./components/EditGroup";
 import SkillGuide from "./components/SkillGuide";
+import EventView from "./components/EventView";
+import SkillEventView from "./components/SkillEventView";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,11 +32,17 @@ function App() {
           <Route exact path="/groups/:id">
             <GroupView />
           </Route>
-          <Route path="/groups/:id/edit">
+          <Route exact path="/groups/edit/:id">
             <EditGroup />
           </Route>
           <Route path="/skill-guide">
             <SkillGuide />
+          </Route>
+          <Route exact path={`/events/:id`}>
+            <EventView />
+          </Route>
+          <Route path={`/events/skill/:id`}>
+            <SkillEventView />
           </Route>
         </Switch>
       )}
