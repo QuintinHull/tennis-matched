@@ -6,6 +6,11 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import GroupView from "./components/GroupView";
+import EditGroup from "./components/EditGroup";
+import SkillGuide from "./components/SkillGuide";
+import EventView from "./components/EventView";
+import SkillEventView from "./components/SkillEventView";
+import CreateEvent from "./components/CreateEvent";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,13 +25,28 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <Home key={1} />
+            <Home />
           </Route>
           <Route path="/signup">
-            <SignupFormPage key={2} />
+            <SignupFormPage />
           </Route>
-          <Route path="/groups/:id">
-            <GroupView key={3} />
+          <Route exact path="/groups/:id">
+            <GroupView />
+          </Route>
+          <Route exact path="/groups/edit/:id">
+            <EditGroup />
+          </Route>
+          <Route exact path={`groups/create/:id`}>
+            <CreateEvent />
+          </Route>
+          <Route exact path="/skill-guide">
+            <SkillGuide />
+          </Route>
+          <Route exact path={`/events/:id`}>
+            <EventView />
+          </Route>
+          <Route exact path={`/events/skill/:id`}>
+            <SkillEventView />
           </Route>
         </Switch>
       )}

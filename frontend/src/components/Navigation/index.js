@@ -15,7 +15,9 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink class="nav_link__signup" to="/signup">
+          sign up
+        </NavLink>
       </>
     );
   }
@@ -31,7 +33,12 @@ function Navigation({ isLoaded }) {
       <div className="nav_center">
         <h1>TennisMatched</h1>
       </div>
-      <div className="nav_right">{isLoaded && sessionLinks}</div>
+      <div className="nav_right">
+        <NavLink exact to="/skill-guide">
+          <button className="skill_button">skill guide</button>
+        </NavLink>
+        {isLoaded && sessionLinks}
+      </div>
     </div>
   );
 }

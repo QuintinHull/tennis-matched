@@ -1,8 +1,8 @@
 .nav_container {
   width: 100%;
   height: 40px;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
+  border-top: 3px solid rgb(51, 51, 51);
+  border-bottom: 3px solid rgb(51, 51, 51);
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -15,6 +15,7 @@
   display: flex;
   justify-content: flex-start;
   align-self: center;
+  color: rgb(51, 51, 51);
 }
 
 .nav_left input {
@@ -36,17 +37,46 @@
 
 .nav_center {
   width: 200px;
+  margin-top: 3px;
   display: flex;
   justify-content: flex-start;
   align-self: center;
+  font-family: "Expletus Sans", cursive;
+  font-size: 18px;
+  color: rgb(51, 51, 51);
 }
 
 i {
   font-size: 23px;
-  color: black;
+  /* color: rgb(51, 51, 51); */
+  color: #feac48;
 }
 
 .profile_button {
   background-color: transparent;
   border: none;
+}
+
+.skill_button {
+  height: 25px;
+  width: 100%;
+  border: none;
+  background-color: #feac48;
+  color: rgb(51, 51, 51);
+  border-radius: 3px;
+  font-family: "Chivo", sans-serif;
+}
+
+.nav_link__signup {
+  width: 53px;
+  text-decoration: none;
+  background-color: #feac48;
+  border-radius: 3px;
+  border: none;
+  color: rgb(51, 51, 51);
+  font-family: "Exo 2", sans-serif;
+  font-size: 14px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 1px 1px 3px #ad7530;
 }
